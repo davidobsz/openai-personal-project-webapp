@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, url_for, redirect
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 openai.Model.retrieve("text-davinci-003")
 app = Flask(__name__)
 
