@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, url_for, redirect
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 openai.Model.retrieve("text-davinci-003")
 app = Flask(__name__)
 
@@ -36,7 +36,7 @@ def picture():
     img = request.args.get("image_url")
 
     # send image which is received in html body
-    return render_template("picture.html", img=img)
+    return render_template("picture.html", image_url=img)
 
 
 # @app.route('/edit', methods=(["GET", "POST"]))
