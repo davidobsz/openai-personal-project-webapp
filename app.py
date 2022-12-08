@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, session, url_for, redirect
 import openai
-openai.api_key = "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"
+import os
+openai.organization = "org-3IYbWVJSBg74DJ3vPwBXCqqS"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.Model.retrieve("text-davinci-003")
 app = Flask(__name__)
 
+
+# curl https://api.openai.com/v1/completions -H "Content-Type: application/json" -H "Authorization: Bearer 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" -d '{"model": "text-davinci-003", "prompt": "Say this is a test", "temperature": 0, "max_tokens": 7}'
 
 @app.route('/', methods=(["GET", "POST"]))
 def index():
