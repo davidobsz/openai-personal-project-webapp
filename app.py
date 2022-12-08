@@ -2,6 +2,29 @@ from flask import Flask, render_template, request, session, url_for, redirect
 import openai
 import os
 openai.organization = "org-3IYbWVJSBg74DJ3vPwBXCqqS"
+
+"""
+To use this application you will have to follow the steps below.
+
+1. have followed the steps https://beta.openai.com/docs/api-reference/introduction
+- git clone https://github.com/openai/openai-quickstart-node.git
+- cd openai-quickstart-node
+- cp .env.example .env
+- copy YOUR secret key and set it as the OPENAI_API_KEY in the newly created .env file.
+CAN CREATE SECRET KEY AT https://beta.openai.com/docs/quickstart/build-your-application
+- python -m venv venv
+- .venv/bin/activate   <- not required if does not work.
+- pip install -r requirements.txt <- this will install the dependencies   <- IMPORTANT.
+
+
+2. change 
+"openai.api_key = os.getenv("OPENAI_API_KEY")"
+to 
+openai.api_key = "YOUR API KEY"
+
+3. Ready to start type "flask run" in terminal.
+"""
+# openai.api_key = "YOUR API KEY"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.Model.retrieve("text-davinci-003")
 app = Flask(__name__)
