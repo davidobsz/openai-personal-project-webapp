@@ -69,12 +69,11 @@ def text():
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=f"{prompt}",
-        max_tokens=7,
+        max_tokens=4000,
         temperature=0
     )
-
+    print("response", response)
     response = response['choices'][0]['text']
-
     return redirect(url_for("home", text_response=response, text_prompt=prompt))
 
 
