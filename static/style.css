@@ -12,7 +12,15 @@ body{
     padding: 10px;
     width: fit-content;
   }
-form {
+
+#text-prompt{
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    width: fit-content;
+  margin-top: 30px;
+  }
+#image-form {
     padding: 20px;
     margin: 0 auto;
     background-color: #f2f2f2;
@@ -66,7 +74,7 @@ img{
     background-color: #111;
   }
 
-#prompt-input {
+.prompt-input {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;

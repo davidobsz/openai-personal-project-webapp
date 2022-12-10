@@ -32,7 +32,8 @@ app = Flask(__name__)
 
 url = ""
 # flask route  "/" with 2 https methods GET and POST
-@app.route('/', methods=(["GET", "POST"]))
+@app.route('/', endpoint="home", methods=(["GET", "POST"]))
+
 def index():
     # if request method from home page is post - user pressed submit button.
     if request.method == "POST":
@@ -55,18 +56,26 @@ def index():
             return render_template("index.html", image_url=url, prompt=prompt) #redirect(url_for("picture", image_url=image_url))
         except:
             return "error.html"
-
+    text = request.args.get("text_response")
+    text_prompt = request.args.get("text_prompt")
     # if no post just return home page
-    return render_template("index.html", image_url=url)
+    return render_template("index.html", image_url=url, text_response=text, text_prompt=text_prompt)
 
 
-@app.route('/picture', methods=(["GET", "POST"]))
-def picture():
-    # get image from post request
-    img = request.args.get("image_url")
+@app.route('/text_completion', methods=(["POST"]))
+def text():
+    prompt = request.form["text-completion"]
+    print(prompt)
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=f"{prompt}",
+        max_tokens=7,
+        temperature=0
+    )
 
-    # send image which is received in html body
-    return render_template("picture.html", image_url=img)
+    response = response['choices'][0]['text']
+
+    return redirect(url_for("home", text_response=response, text_prompt=prompt))
 
 
 # @app.route('/edit', methods=(["GET", "POST"]))
