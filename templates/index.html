@@ -24,7 +24,7 @@
 
     </div>
         <div id="img-prompt">
-        <h3>Image Generation using OpenAI API</h3>
+            <h3>Image Generation using OpenAI API</h3>
         <figure>
             <img id="image-id" src="{% if image_url %} {{ image_url }} {% else %} {{ "https://via.placeholder.com/512" }} {% endif %}">
             <figcaption>{{ prompt }}</figcaption>
@@ -42,9 +42,26 @@
                 <input class="prompt-input" placeholder="Enter prompt" name="prompt"><br>
                 <button class="button-89" id="submit-prompt" type="submit" onclick="return load()" onclick="return checkInput()">Submit</button>
             </form>
+
+        <details class="details">
+                <summary>Click for explanation</summary>
+                <p>
+                    To use the OpenAI image creation API, you will need to provide a text
+                    description of the image you want to generate. This description can include information about
+                    the objects, scenes, and backgrounds that you want to include in the image, as well as details
+                    about their colors, sizes, and spatial relationships.<br>
+
+                    The OpenAI image creation API will then process this description using natural language processing
+                    techniques to extract and understand the relevant information. It will use this information to
+                    generate an image using computer vision techniques, such as generative adversarial networks (GANs)
+                    or variational autoencoders (VAEs). <br>
+                    Overall, The OpenAI image creation API is an advanced machine learning model that can generate high-quality
+                    images from text descriptions.
+                </p>
+        </details>
         </div>
 
-        </div>
+
 
 
         <div id="text-prompt" style="width: 610px;">
@@ -57,6 +74,22 @@
                 <button class="button-89" id="submit-prompt" type="submit" onclick="return load()" onclick="return checkInput()">Submit</button>
             </form>
             </div>
+            <details class="details">
+                <summary>Click for explanation</summary>
+                <p>
+                    To use text completion, you will need to provide a prompt, which is a starting point for the generated text.
+                    The prompt can be a single word, a phrase, a sentence, or a paragraph of text.
+                    The text completion model will then process the prompt and generate a response
+                    based on the trained model. The response will be a continuation of the prompt,
+                    and will be relevant and coherent in the context of the prompt.
+
+                  OpenAI text completion is a machine learning technique that uses natural language processing (NLP)
+                    to generate text based on a given prompt. The goal of text completion is to produce relevant and coherent
+                    text that can be used for a variety of applications, such as generating responses to user queries, completing
+                    sentences or paragraphs of text,
+                    or creating original content based on a given topic or style.
+                </p>
+            </details>
         </div>
 
 
@@ -71,6 +104,21 @@
                 <button class="button-89" id="submit-prompt" type="submit" onclick="return load()" onclick="return checkInput()">Submit</button>
             </form>
             </div>
+            <details class="details">
+                <summary>Click for explanation</summary>
+                <p>
+
+                    o use OpenAI code generation, you will need to provide a prompt, which is a starting point for the generated code.
+                    The prompt can be a single word, a phrase, a sentence, or a paragraph of text that describes the desired
+                    functionality or behavior of the generated code. <br>
+                     The goal of OpenAI code generation is to produce high-quality code that is
+                    consistent with the training data and the input prompt, and can be customized
+                    to match the style and conventions of the target programming language.<br>
+                    The OpenAI code generation model is trained on a large dataset of code examples,
+                    which are used to teach the model the patterns and relationships between the
+                    input prompt and the generated code.
+                </p>
+             </details>
         </div>
 {##}
 {#<div class="loader" id="loader">#}
