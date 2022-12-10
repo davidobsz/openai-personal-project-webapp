@@ -20,6 +20,9 @@
             In this personal project website I try to demonstrate some
             key features of the OpenAI API.
         </p>
+         <style>
+
+  </style>
     </div>
 
     <div id="centered-div">
@@ -28,13 +31,61 @@
         <figure>
             <img src="{% if image_url %} {{ image_url }} {% else %} {{ "https://via.placeholder.com/512" }} {% endif %}">
             <figcaption>{{ prompt }}</figcaption>
+        <div id="load">
+                <div>G</div>
+                 <div>N</div>
+                <div>I</div>
+                <div>D</div>
+                <div>A</div>
+                <div>O</div>
+                <div>L</div>
+                </div>
+{#        <div class="loader">#}
+{#  <div class="loader-inner">#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#  </div>#}
+{#</div>#}
         </figure>
             <form method="post" action="/">
                 <input id="prompt-input" placeholder="Enter prompt" name="prompt"><br>
-                <button class="button-89" id="submit-prompt" type="submit" onclick="return checkInput()">Submit</button>
+                <button class="button-89" id="submit-prompt" type="submit" onclick="return load()" onclick="return checkInput()">Submit</button>
             </form>
         </div>
     </div>
+
+{#<div class="loader">#}
+{#  <div class="loader-inner">#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#    <div class="loader-line-wrap">#}
+{#      <div class="loader-line"></div>#}
+{#    </div>#}
+{#  </div>#}
+{#</div>#}
 
 <script src="/static/script.js" rel="script"></script>
 </body>
