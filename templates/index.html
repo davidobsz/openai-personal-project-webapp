@@ -9,7 +9,8 @@
 <nav>
   <ul id="nav-ul">
     <li><a href="#img-prompt">Image Generation</a></li>
-    <li><a href="#text-prompt">Text Generation</a></li>
+    <li><a href="#text-prompt">Text Completion</a></li>
+    <li><a href="#code-prompt">Code Completion</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </nav>
@@ -59,6 +60,18 @@
         </div>
 
 
+
+        <div id="code-prompt" style="width: 610px;">
+        <h3>Code Generation using OpenAI API</h3>
+            <p id="actual-response-code">{{ code_response }}</p>
+            <div style="border-top: 1px solid #ccc;">
+                <p >{{ code_prompt }}</p>
+            <form id="code-completion-form" method="post" action="/code_generation">
+                <input class="prompt-input" placeholder="Enter prompt" id="code-generation" name="code-generation"><br>
+                <button class="button-89" id="submit-prompt" type="submit" onclick="return load()" onclick="return checkInput()">Submit</button>
+            </form>
+            </div>
+        </div>
 {##}
 {#<div class="loader" id="loader">#}
 {#  <div class="loader-inner">#}

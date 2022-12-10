@@ -26,9 +26,22 @@ body{
     width: fit-content;
   margin-top: 30px;
   }
+
+#actual-response-code {
+  padding: 15px;
+}
 #actual-response{
   padding: 15px;
 }
+
+
+#code-prompt{
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    width: fit-content;
+  margin-top: 30px;
+  }
 #image-form {
     padding: 20px;
     margin: 0 auto;

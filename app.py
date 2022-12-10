@@ -34,7 +34,7 @@ url = ""
 # flask route  "/" with 2 https methods GET and POST
 @app.route('/', endpoint="home", methods=(["GET", "POST"]))
 def index():
-    print(openai.Model.list())
+    #print(openai.Model.list())
     # if request method from home page is post - user pressed submit button.
     if request.method == "POST":
         try:
@@ -58,8 +58,11 @@ def index():
             return "error.html"
     text = request.args.get("text_response")
     text_prompt = request.args.get("text_prompt")
+
+    code = request.args.get("code_response")
+    code_prompt = request.args.get("code_prompt")
     # if no post just return home page
-    return render_template("index.html", image_url=url, text_response=text, text_prompt=text_prompt)
+    return render_template("index.html", image_url=url, text_response=text, text_prompt=text_prompt, code_prompt=code_prompt, code_response=code)
 
 
 @app.route('/text_completion', methods=(["POST"]))
@@ -76,6 +79,20 @@ def text():
     response = response['choices'][0]['text']
     return redirect(url_for("home", text_response=response, text_prompt=prompt))
 
+
+@app.route('/code_generation', methods=(["POST"]))
+def code():
+    prompt = request.form["code-generation"]
+    print(prompt)
+    response = openai.Completion.create(
+        model="code-davinci-002",
+        prompt=f"{prompt}",
+        max_tokens=3800,
+        temperature=0
+    )
+    print("response", response)
+    response = response['choices'][0]['text']
+    return redirect(url_for("home", code_response=response, code_prompt=prompt))
 
 # @app.route('/edit', methods=(["GET", "POST"]))
 # def edit():
