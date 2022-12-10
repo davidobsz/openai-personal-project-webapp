@@ -33,8 +33,8 @@ app = Flask(__name__)
 url = ""
 # flask route  "/" with 2 https methods GET and POST
 @app.route('/', endpoint="home", methods=(["GET", "POST"]))
-
 def index():
+    print(openai.Model.list())
     # if request method from home page is post - user pressed submit button.
     if request.method == "POST":
         try:

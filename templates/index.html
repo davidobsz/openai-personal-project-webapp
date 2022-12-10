@@ -48,9 +48,9 @@
 
         <div id="text-prompt" style="width: 610px;">
         <h3>Text Completion using OpenAI API</h3>
-            <p>{{ text_response }}</p>
+            <p id="actual-response">{{ text_response }}</p>
             <div style="border-top: 1px solid #ccc;">
-                <p>{{ text_prompt }}</p>
+                <p >{{ text_prompt }}</p>
             <form id="text-completion-form" method="post" action="/text_completion">
                 <input class="prompt-input" placeholder="Enter prompt" id="text-completion" name="text-completion"><br>
                 <button class="button-89" id="submit-prompt" type="submit" onclick="return load()" onclick="return checkInput()">Submit</button>

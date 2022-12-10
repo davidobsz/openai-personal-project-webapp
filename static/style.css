@@ -26,6 +26,9 @@ body{
     width: fit-content;
   margin-top: 30px;
   }
+#actual-response{
+  padding: 15px;
+}
 #image-form {
     padding: 20px;
     margin: 0 auto;
