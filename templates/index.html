@@ -1,15 +1,41 @@
 <html>
 <head>
+    <link rel="stylesheet" href="/static/style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
+<nav>
+  <ul id="nav-ul">
+    <li><a href="image-generation.html">Image Generation</a></li>
+    <li><a href="code-generation.html">Code Generation</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+<body>
+    <div id="welcome">
+        <h1>Welcome</h1>
+        <p>
+            In this personal project website I try to demonstrate some
+            key features of the OpenAI API.
+        </p>
+    </div>
 
-<bod>
+    <div id="centered-div">
+        <div id="img-prompt">
+        <h3>Image Generation using OpenAI API</h3>
+        <figure>
+            <img src="{% if image_url %} {{ image_url }} {% else %} {{ "https://via.placeholder.com/512" }} {% endif %}">
+            <figcaption>{{ prompt }}</figcaption>
+        </figure>
+            <form method="post" action="/">
+                <input id="prompt-input" placeholder="Enter prompt" name="prompt"><br>
+                <button class="button-89" id="submit-prompt" type="submit" onclick="return checkInput()">Submit</button>
+            </form>
+        </div>
+    </div>
 
-    <form method="post" action="/">
-        <input placeholder="Enter prompt" name="prompt">
-        <button type="submit">Submit</button>
-    </form>
-
-
-</bod>
+<script src="/static/script.js" rel="script"></script>
+</body>
 </html>

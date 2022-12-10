@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+body{
+    background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+#img-prompt{
+    text-align: center;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    word-wrap: break-word;
+
+  }
+form {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    width: 580px;
+    position: relative;
+  }
+form input{
+    margin: 10px;
+    position: relative;
+  }
+img{
+    padding: 10px;
+}
+#centered-div{
+    padding: 20px;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+#welcome{
+
+}
+
+
+  nav {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #333;
+    width: 100%;
+  }
+ #nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  #nav-ul li {
+    float: left;
+  }
+  #nav-ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  #nav-ul li a:hover {
+    background-color: #111;
+  }
+
+#prompt-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    }
+    #prompt-input:focus {
+    border: 1px solid #555;
+}
+
+
+/* CSS */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+    margin-top: 10px;
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 14px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}

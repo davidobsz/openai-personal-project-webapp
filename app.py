@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, url_for, redirect
 import openai
 import os
+
 openai.organization = "org-3IYbWVJSBg74DJ3vPwBXCqqS"
 
 """
@@ -29,37 +30,39 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.Model.retrieve("text-davinci-003")
 app = Flask(__name__)
 
-
-
-
+url = ""
+# flask route  "/" with 2 https methods GET and POST
 @app.route('/', methods=(["GET", "POST"]))
 def index():
-
-    # if request method from home page is post i.e user pressed submit button.
+    # if request method from home page is post - user pressed submit button.
     if request.method == "POST":
-        prompt = request.form["prompt"]
+        try:
+            prompt = request.form["prompt"]
 
-        # generate the response
-        response = openai.Image.create(
-            prompt=f"{prompt}",
-            n=1,
-            size="256x256"
-        )
+            # generate the response based on prompt
+            response = openai.Image.create(
+                prompt=f"{prompt}",
+                n=1,
+                size="512x512"
+            )
+            global url
+            # trim response to show URL only
+            image_url = response['data'][0]['url']
 
-        # trim response to show URL only
-        image_url = response['data'][0]['url']
+            url = image_url
 
-        # redirect to /picture where image is shown on screen
-        return redirect(url_for("picture", image_url=image_url))
+            # redirect to /picture where image is shown on screen
+            return render_template("index.html", image_url=url, prompt=prompt) #redirect(url_for("picture", image_url=image_url))
+        except:
+            return "error.html"
 
     # if no post just return home page
-    return render_template("index.html")
-
+    return render_template("index.html", image_url=url)
 
 
 @app.route('/picture', methods=(["GET", "POST"]))
 def picture():
-    # get image
+    # get image from post request
     img = request.args.get("image_url")
 
     # send image which is received in html body
