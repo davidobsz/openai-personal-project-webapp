@@ -6,6 +6,12 @@ body{
     text-align: center;
 }
 
+
+#welcome{
+  padding: 20px;
+  margin: 20px;
+}
+
 #img-prompt{
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
