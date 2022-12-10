@@ -17,10 +17,17 @@ form {
     padding: 20px;
     margin: 0 auto;
     background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    width: 580px;
+    border-top: 1px solid #ccc;
+    width: available;
     position: relative;
+    text-align: center;
+    align-items: center;
   }
+
+
+figcaption{
+  width: 512px;
+}
 form input{
     margin: 10px;
     position: relative;
@@ -30,7 +37,7 @@ img{
 }
 #centered-div{
     padding: 20px;
-    position: relative;
+    position: center;
     align-content: center;
     justify-content: center;
     display: flex;
@@ -158,6 +165,10 @@ img{
   -webkit-transform:rotate(180deg);
   color:black;
   font-size: 40px;
+}
+
+#text-completion{
+  position: relative;
 }
 
 
@@ -318,7 +329,7 @@ img{
 /*    bottom: 0;*/
 /*    left: 0;*/
 /*    overflow: hidden;*/
-/*    position: fixed;*/
+/*    position: absolute;*/
 /*    right: 0;*/
 /*    top: 0;*/
 /*    z-index: 99999;*/

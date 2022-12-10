@@ -29,7 +29,7 @@
         <div id="img-prompt">
         <h3>Image Generation using OpenAI API</h3>
         <figure>
-            <img src="{% if image_url %} {{ image_url }} {% else %} {{ "https://via.placeholder.com/512" }} {% endif %}">
+            <img id="image-id" src="{% if image_url %} {{ image_url }} {% else %} {{ "https://via.placeholder.com/512" }} {% endif %}">
             <figcaption>{{ prompt }}</figcaption>
         <div id="load">
                 <div>G</div>
@@ -40,25 +40,6 @@
                 <div>O</div>
                 <div>L</div>
                 </div>
-{#        <div class="loader">#}
-{#  <div class="loader-inner">#}
-{#    <div class="loader-line-wrap">#}
-{#      <div class="loader-line"></div>#}
-{#    </div>#}
-{#    <div class="loader-line-wrap">#}
-{#      <div class="loader-line"></div>#}
-{#    </div>#}
-{#    <div class="loader-line-wrap">#}
-{#      <div class="loader-line"></div>#}
-{#    </div>#}
-{#    <div class="loader-line-wrap">#}
-{#      <div class="loader-line"></div>#}
-{#    </div>#}
-{#    <div class="loader-line-wrap">#}
-{#      <div class="loader-line"></div>#}
-{#    </div>#}
-{#  </div>#}
-{#</div>#}
         </figure>
             <form method="post" action="/">
                 <input id="prompt-input" placeholder="Enter prompt" name="prompt"><br>
@@ -67,7 +48,9 @@
         </div>
     </div>
 
-{#<div class="loader">#}
+
+{##}
+{#<div class="loader" id="loader">#}
 {#  <div class="loader-inner">#}
 {#    <div class="loader-line-wrap">#}
 {#      <div class="loader-line"></div>#}
