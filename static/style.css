@@ -7,11 +7,10 @@ body{
 }
 
 #img-prompt{
-    text-align: center;
-    position: absolute;
+    margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    word-wrap: break-word;
-
+    padding: 10px;
+    width: fit-content;
   }
 form {
     padding: 20px;
@@ -34,13 +33,6 @@ form input{
   }
 img{
     padding: 10px;
-}
-#centered-div{
-    padding: 20px;
-    position: center;
-    align-content: center;
-    justify-content: center;
-    display: flex;
 }
 
 #welcome{
