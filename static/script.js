@@ -7,6 +7,7 @@ function checkInput(){
         alert("Prompt cannot be empty")
         return false
     }
+
 }
 
 function load(){

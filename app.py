@@ -94,17 +94,11 @@ def code():
     response = response['choices'][0]['text']
     return redirect(url_for("home", code_response=response, code_prompt=prompt))
 
-# @app.route('/edit', methods=(["GET", "POST"]))
-# def edit():
-#     response = openai.Image.create_edit(
-#         image=open("image_edit_original.png", "rb"),
-#         mask=open("mask.png", "rb"),
-#         prompt="add a wooden house",
-#         n=1,
-#         size="1024x1024"
-#     )
-#     image_url = response['data'][0]['url']
-#     return image_url
+# openai.Edit.create(
+#   model="code-davinci-edit-001",
+#   input="What day of the wek is it?",
+#   instruction="Fix the spelling mistakes"
+# )
 
 if __name__ == '__main__':
     app.run()
