@@ -105,7 +105,9 @@ img{
 #about {
     padding-top: 10px;
 }
-
+#counter{
+    padding: 20px;
+}
 #about-p{
     width: 600px;
     padding-bottom: 10px;
